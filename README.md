@@ -13,4 +13,4 @@ H = (A^T|I).
  + find the pairwise distance between all vectors in a matrix
  + print pairwise distances between vectors
  + check if an [n,k] code correcting t errors is possible
- + a choose(n,r) function created by Andrew Dalke
+ + a multiplicative formula for the choose(n,r) function
