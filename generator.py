@@ -3,20 +3,17 @@ import time
 import math
 from operator import add
 
+# Calculate nCk using the multiplicative formula for
+# binary coefficients
 def choose(n, k):
-    """
-    A fast way to calculate binomial coefficients by Andrew Dalke (contrib).
-    """
-    if 0 <= k <= n:
-        ntok = 1
-        ktok = 1
-        for t in xrange(1, min(k, n - k) + 1):
-            ntok *= n
-            ktok *= t
-            n -= 1
-        return ntok // ktok
-    else:
-        return 0
+    bin_coeff_numerator = 1
+    bin_coeff_denominator = 1
+    # num and denom separate to avoid need for float division
+    
+    for i in range(1,k+1):
+        bin_coeff_numerator *= n + 1 - i
+        bin_coeff_denominator *= i
+    return bin_coeff_numerator / bin_coeff_denominator
 
 def isCodePossible(n,k,t):
     # t is the max number of errors an [n,k] code can correct
