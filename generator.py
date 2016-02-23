@@ -128,7 +128,6 @@ def main():
            "codeword (there are n-k redundancy bits), and t is the number of "
            "errors the code can correct.")
            
-       
     n = input("Please enter an n value: ")
     k = input("Please enter a k value: ")
     t = input("Please enter a t value: ")
@@ -139,7 +138,6 @@ def main():
     G = generate_codewords(n,k,t)
     printMatrix(G)
 
-    
 if __name__ == '__main__':
     #start = time.time()
     main()
